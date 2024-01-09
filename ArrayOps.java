@@ -50,23 +50,16 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
         for (int i = 0; i < array1.length; i++) {
-            System.out.println("1- " + isEqualsArrays); // 1
             isEqualsArrays = false;
-
             for (int j = 0; j < array2.length; j++) {
-                System.out.println("2- " + isEqualsArrays); // 2
-                System.out.println(array1[i] + " " + array2[j]);
                 if (array1[i] == array2[j]) {
                     isEqualsArrays = true;
                 }
             }
-            System.out.println("3- " + isEqualsArrays); // 3
             if (isEqualsArrays == false) {
                 return isEqualsArrays;
             }
-            System.out.println("4- " + isEqualsArrays); // 4
         }
-        System.out.println("5- " + isEqualsArrays); // 5
         return isEqualsArrays;
     }
 
