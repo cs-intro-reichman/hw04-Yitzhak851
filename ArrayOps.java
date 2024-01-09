@@ -1,8 +1,9 @@
 public class ArrayOps {
-    static int[] array1 = {  1, 2, 3 };
+    static int[] array1 = { 1, 2, 3 };
     static int isMissingSum;
     static int isCorrectSum;
     static int missingInt;
+    static int firstMaxValue;
     static int secondMaxValue;
 
     public static void main(String[] args) {
@@ -24,7 +25,23 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int[] array) {
-        
+        firstMaxValue = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > firstMaxValue) {
+                firstMaxValue = array[i];
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == firstMaxValue) {
+                array[i] = 0;
+            }
+        }
+        secondMaxValue = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > secondMaxValue) {
+                secondMaxValue = array[i];
+            }
+        }
         return secondMaxValue;
     }
 
