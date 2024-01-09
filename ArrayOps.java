@@ -1,10 +1,13 @@
 public class ArrayOps {
     static int[] array1 = { 1, 2, 3 };
+    static int[] array2 = { 1, 2 };
+    static int missingInt;
     static int isMissingSum;
     static int isCorrectSum;
-    static int missingInt;
     static int firstMaxValue;
     static int secondMaxValue;
+    static boolean isEqualsArrays;
+    static int index;
 
     public static void main(String[] args) {
         System.out.println(findMissingInt(array1));
@@ -46,8 +49,17 @@ public class ArrayOps {
     }
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
-        // Write your code here:
-        return false;
+        isEqualsArrays = true;
+        index = 0;
+        while (index < array2.length ) {
+            for (int i = 0; i < array1.length; i++) {
+                if (array1[i] != array2[index]) {
+                    isEqualsArrays = false;
+                }
+            }
+            index++;
+        }
+        return isEqualsArrays;
     }
 
     public static boolean isSorted(int[] array) {
