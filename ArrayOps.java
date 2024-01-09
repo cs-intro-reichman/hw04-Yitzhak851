@@ -68,7 +68,6 @@ public class ArrayOps {
     public static boolean isSorted(int[] array1) {
         firstMaxValue = array1[0];
         for (int i = 0; i < array1.length; i++) {
-            System.out.println(firstMaxValue + " " + array1[i] + " " + isSorted);
             if (array1[i] < firstMaxValue) {
                 isSorted = false;
             }
