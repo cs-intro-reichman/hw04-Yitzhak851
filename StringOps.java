@@ -1,10 +1,10 @@
 public class StringOps {
-    static String str1 = "Hello world"; // => hEllO wOrld
+    static String str1 = "hello world";
     static String ans;
     static char chr = 'l';
     static int[] arr;
-
-    // allIndexOf("Hello world",'l'); // output: {2, 3, 9}
+    // allIndexOf("Hello world",'l'); 
+    // output: {2, 3, 9}
     public static void main(String[] args) {
         printArray(allIndexOf(str1, chr));
     }
