@@ -14,17 +14,12 @@ public class StringOps {
     public static String capVowelsLowRest(String str) {
         ans = "";
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) >= 65 && str.charAt(i) <= 90) {
-                // if is upper case - convert to lower case
-                ans += (char) (str.charAt(i) + 32);
-            } else if (str.charAt(i) >= 97 && str.charAt(i) <= 122) {
-                // if is lower case - convert to upper case
-                ans += (char) (str.charAt(i) - 32);
-            } else if (str.charAt(i) == ' '){
-                // if is space - convert to space
-                ans += ' ';
-            } else {
-                ans += str.charAt(i);
+            switch (str.charAt(i)) {
+                case 97, 101, 105, 111, 117:
+                    ans += (char) (str.charAt(i) - 32);
+                    break;
+                default: ans += (char) (str.charAt(i));
+                    break;
             }
         }
         return ans;
