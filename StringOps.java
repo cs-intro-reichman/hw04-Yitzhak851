@@ -4,8 +4,9 @@ public class StringOps {
     // 3.substring(int start)
     // 4.substring(int start,int ends)
     // 5.indexOf(String str)
-    static String str1 = "Hello World"; // => hEllO wOrld
+    static String str1 = " Intro to coMPUter sCIEncE "; // => hEllO wOrld
     static String ans;
+
     public static void main(String[] args) {
         // System.out.println(capVowelsLowRest(str1));
         System.out.println(camelCase(str1));
@@ -28,25 +29,25 @@ public class StringOps {
 
     public static String camelCase(String str) {
         ans = "";
+        int index = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(0) == ' ' ) {
-                while (str.charAt(i) != ' ') {
-                    i++;
+            if (str.charAt(index) == ' ' && index == 0) { // if first char is space
+                while (str.charAt(index) == ' ') { // skip all spaces
+                    index++;
                 }
-                if (str.charAt(i) >= 65 && str.charAt(i) <= 90) {  // if upper case - convert to lower case
+                if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // firstChar isUper ? changeToLower
                     ans += (char) (str.charAt(i) + 32);
                 }
-            } else if (str.charAt(i) == ' ') {
-                while (str.charAt(i) != ' '){
+            } else if (str.charAt(i) == ' ' && i < str.length() - 1) { // if char between words is space
+                while (str.charAt(i) == ' ' && i < str.length()) { // skip all spaces
                     i++;
                 }
-                if (str.charAt(i) >= 65 && str.charAt(i) <= 90) {
+                if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // charAfterSpace isUper ? +=
                     ans += str.charAt(i);
                 } else {
                     ans += (char) (str.charAt(i) - 32);
                 }
-            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90){
-                // if is upper case - convert to lower case
+            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // isUpper ? converToLower : add
                 ans += (char) (str.charAt(i) + 32);
             } else {
                 ans += str.charAt(i);
