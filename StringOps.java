@@ -1,10 +1,12 @@
 public class StringOps {
-    static String str1 = " Intro to coMPUter sCIEncE "; // => hEllO wOrld
+    static String str1 = "Hello world"; // => hEllO wOrld
     static String ans;
-    static char chr;
+    static char chr = 'l';
+    static int[] arr;
 
+    // allIndexOf("Hello world",'l'); // output: {2, 3, 9}
     public static void main(String[] args) {
-        System.out.println(camelCase(str1));
+        printArray(allIndexOf(str1, chr));
     }
 
     public static String capVowelsLowRest(String str) {
@@ -52,8 +54,35 @@ public class StringOps {
         return ans;
     }
 
-    public static int[] allIndexOf(String string, char chr) {
-        // Write your code here:
-        return new int[1];
+    public static int[] allIndexOf(String str, char chr) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == chr) {
+                count++;
+            }
+        }
+        arr = new int[count];
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == chr) {
+                for (int j = 0; j < arr.length; j++) {
+                    arr[j] = i;
+                }
+            }
+        }
+        return arr;
+    }
+
+    public static void printArray(int[] array) {
+        System.out.print('{');
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i < array.length && i != array.length - 1) {
+                System.out.print(", ");
+            }
+            if (i == array.length - 1) {
+                System.out.print("}");
+            }
+        }
+        System.out.println();
     }
 }
