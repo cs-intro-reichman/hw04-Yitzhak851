@@ -1,5 +1,5 @@
 public class ArrayOps {
-    static int[] array1 = { 1, 2 };
+    static int[] array1 = { 1, 2, 4 };
     static int[] array2 = { 1, 2 };
     static int missingInt;
     static int isMissingSum;
@@ -7,11 +7,13 @@ public class ArrayOps {
     static int firstMaxValue;
     static int secondMaxValue;
     static boolean isEqualsArrays = false;
+    static boolean isSorted = true;
 
     public static void main(String[] args) {
-        System.out.println(findMissingInt(array1));
+        // System.out.println(findMissingInt(array1));
         // System.out.println(secondMaxValue(array1));
-        containsTheSameElements(array1, array2);
+        // containsTheSameElements(array1, array2);
+        System.out.println(isSorted(array1));
     }
 
     public static int findMissingInt(int[] array1) {
@@ -63,9 +65,16 @@ public class ArrayOps {
         return isEqualsArrays;
     }
 
-    public static boolean isSorted(int[] array) {
-        // Write your code here:
-        return false;
+    public static boolean isSorted(int[] array1) {
+        firstMaxValue = array1[0];
+        for (int i = 0; i < array1.length; i++) {
+            System.out.println(firstMaxValue + " " + array1[i] + " " + isSorted);
+            if (array1[i] < firstMaxValue) {
+                isSorted = false;
+            }
+            firstMaxValue = array1[i];
+        }
+        return isSorted;
     }
 
 }
