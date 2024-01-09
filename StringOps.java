@@ -47,7 +47,8 @@ public class StringOps {
                 } else {
                     ans += (char) (str.charAt(i) - 32);
                 }
-            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // isUpper ? converToLower : add
+            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90 && i < str.length() - 1) {
+                // isUpper ? converToLower : add
                 ans += (char) (str.charAt(i) + 32);
             } else {
                 ans += str.charAt(i);
