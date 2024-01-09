@@ -1,6 +1,6 @@
 public class ArrayOps {
-    static int[] array1 = { 1, 2, 4 };
-    static int[] array2 = { 1, 2 };
+    static int[] array1;
+    static int[] array2;
     static int missingInt;
     static int isMissingSum;
     static int isCorrectSum;
@@ -13,7 +13,7 @@ public class ArrayOps {
         // System.out.println(findMissingInt(array1));
         // System.out.println(secondMaxValue(array1));
         // containsTheSameElements(array1, array2);
-        System.out.println(isSorted(array1));
+        // System.out.println(isSorted(array1));
     }
 
     public static int findMissingInt(int[] array1) {
