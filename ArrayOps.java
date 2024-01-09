@@ -1,11 +1,13 @@
 public class ArrayOps {
-    static int[] array1 = { 0, 1, 2, 3, 4, 6 };
+    static int[] array1 = {  1, 2, 3 };
     static int isMissingSum;
     static int isCorrectSum;
     static int missingInt;
+    static int secondMaxValue;
 
     public static void main(String[] args) {
         System.out.println(findMissingInt(array1));
+        System.out.println(secondMaxValue(array1));
     }
 
     public static int findMissingInt(int[] array) {
@@ -22,8 +24,8 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int[] array) {
-        // Write your code here:
-        return 0;
+        
+        return secondMaxValue;
     }
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
