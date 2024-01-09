@@ -66,12 +66,22 @@ public class ArrayOps {
     }
 
     public static boolean isSorted(int[] array1) {
-        firstMaxValue = array1[0];
+        int minNumTest = array1[0];
         for (int i = 0; i < array1.length; i++) {
-            if (array1[i] < firstMaxValue) {
+            if (array1[i] < minNumTest) {
                 isSorted = false;
             }
-            firstMaxValue = array1[i];
+            minNumTest = array1[i];
+        }
+        if (isSorted == false) {
+            isSorted = true;
+            int maxNumTest = array1[0];
+            for (int i = 0; i < array1.length; i++) {
+                if (array1[i] > maxNumTest) {
+                    isSorted = false;
+                }
+                maxNumTest = array1[i];
+            }
         }
         return isSorted;
     }
