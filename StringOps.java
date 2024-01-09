@@ -1,14 +1,9 @@
 public class StringOps {
-    // 1.charAt(int index)
-    // 2.length()
-    // 3.substring(int start)
-    // 4.substring(int start,int ends)
-    // 5.indexOf(String str)
     static String str1 = " Intro to coMPUter sCIEncE "; // => hEllO wOrld
     static String ans;
+    static char chr;
 
     public static void main(String[] args) {
-        // System.out.println(capVowelsLowRest(str1));
         System.out.println(camelCase(str1));
     }
 
@@ -29,11 +24,11 @@ public class StringOps {
 
     public static String camelCase(String str) {
         ans = "";
-        int index = 0;
+        chr = ' ';
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(index) == ' ' && index == 0) { // if first char is space
-                while (str.charAt(index) == ' ') { // skip all spaces
-                    index++;
+            if (str.charAt(i) == chr && i == 0) { // if first char is space
+                while (str.charAt(i) == chr) { // skip all spaces
+                    i++;
                 }
                 if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // firstChar isUper ? changeToLower
                     ans += (char) (str.charAt(i) + 32);
