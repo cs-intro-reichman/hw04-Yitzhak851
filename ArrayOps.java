@@ -25,7 +25,7 @@ public class ArrayOps {
         missingInt = isCorrectSum - isMissingSum;
         return missingInt;
     }
-    // {1,2,3,4,5}
+
     public static int secondMaxValue(int[] array1) {
         firstMaxValue = array1[0];
         for (int i = 0; i < array1.length; i++) {
@@ -33,8 +33,8 @@ public class ArrayOps {
                 firstMaxValue = array1[i];
             }
         }
-        for(int i = 0; i < array1.length; i++){
-            if(array1[i] == firstMaxValue){
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] == firstMaxValue) {
                 array1[i] = 0;
                 i = array1.length;
             }
