@@ -67,7 +67,6 @@ public class StringOps {
             if (str.charAt(i) == chr) {
                 int temp = i;
                 while (temp <= i && index < arr.length) { 
-                    System.out.println(i + " " + index);
                     arr[index] = temp;
                     index++; 
                     temp++; 
