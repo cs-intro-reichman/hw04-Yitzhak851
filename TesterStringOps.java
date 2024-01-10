@@ -1,3 +1,9 @@
+/**
+ * This class contain a "TesterStringOps" mission.
+ * 
+ * @author (Yitzhak baror)
+ * @version (10.01.2024)
+ */
 import java.util.Arrays;
 
 public class TesterStringOps {

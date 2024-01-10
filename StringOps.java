@@ -1,42 +1,109 @@
+/**
+ * This class contain a "StringOps" mission.
+ * 
+ * @author (Yitzhak baror)
+ * @version (10.01.2024)
+ */
 public class StringOps {
-    ////////////////////////////////////////////////////////////
-    //////                                               ///////
-    //////              Reminder:                        ///////
-    //////        allowed methods                        ///////
-    //////                                               ///////
-    //////        1.charAt(int index)                    ///////
-    //////        2.length()                             ///////
-    //////        3.substring(int start)                 ///////
-    //////        4.substring(int start,int ends)        ///////
-    //////        5.indexOf(String str)                  ///////
-    //////                                               ///////
-    //////        The rest are not allowed !             ///////
-    //////        if you want to use a different         ///////
-    //////        method, and you can implement          ///////
-    //////        it using material from the course      ///////
-    //////        you need to implement a version of     ///////
-    //////        the function by yourself.              ///////
-    //////                                               ///////
-    //////        see example for substring              ///////
-    //////        in Recitation 3 question 5             ///////
-    //////                                               ///////
-    ////////////////////////////////////////////////////////////
+    static String str1 ;
+    static String ans;
+    static char chr;
+    static int[] arr;
     public static void main(String[] args) {
-        
+        // main method
     }
 
-    public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+    public static String capVowelsLowRest(String str) {
+        ans = "";
+        for (int i = 0; i < str.length(); i++) { 
+            char temp = str.charAt(i);
+            if (temp >= 'A' && temp <= 'Z') {
+                temp = (char) (temp + 32);
+                switch (temp) {
+                    case 'a', 'e', 'i', 'o', 'u':
+                        temp = (char) (temp - 32);
+                        break;
+                }
+                ans += temp;
+            } else {
+                switch (temp) {
+                    case 'a', 'e', 'i', 'o', 'u':
+                        temp = (char) (temp - 32);
+                        break;
+                }
+                ans += temp;
+            }
+        }
+        return ans;
     }
 
-    public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+    public static String camelCase(String str) {
+        ans = "";
+        chr = ' ';
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == chr && i == 0) { // isFirstChar isSpace ?
+                while (str.charAt(i) == chr) { // skip all spaces
+                    i++;
+                }
+                if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // firstChar isUper ? changeToLower
+                    ans += (char) (str.charAt(i) + 32);
+                }
+                if (str.charAt(i) >= 97 && str.charAt(i) <= 122) { // firstChar isLower ? Add
+                    ans += str.charAt(i);
+                }
+            } else if (str.charAt(i) == ' ' && i < str.length() - 1) { // isChar between words is space
+                while (str.charAt(i) == ' ' && i < str.length()) { // skip all spaces
+                    i++;
+                }
+                if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // charAfterSpace isUper ? +=
+                    ans += str.charAt(i);
+                } else {
+                    ans += (char) (str.charAt(i) - 32);
+                }
+            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90) {
+                // isUpper ? converToLower : add
+                ans += (char) (str.charAt(i) + 32);
+            } else {
+                ans += str.charAt(i);
+            }
+        }
+        return ans;
     }
 
-    public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+    public static int[] allIndexOf(String str, char chr) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == chr) {
+                count++;
+            }
+        }
+        arr = new int[count];
+        int index = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == chr) {
+                int temp = i;
+                while (temp <= i && index < arr.length) {
+                    arr[index] = temp;
+                    index++;
+                    temp++;
+                }
+
+            }
+        }
+        return arr;
+    }
+
+    public static void printArray(int[] array) {
+        System.out.print('{');
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i < array.length && i != array.length - 1) {
+                System.out.print(", ");
+            }
+            if (i == array.length - 1) {
+                System.out.print("}");
+            }
+        }
+        System.out.println();
     }
 }

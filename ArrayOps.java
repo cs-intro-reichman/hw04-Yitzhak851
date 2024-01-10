@@ -1,26 +1,93 @@
+/**
+ * This class contain a "ArrayOps" mission.
+ * 
+ * @author (Yitzhak baror)
+ * @version (10.01.2024)
+ */
 public class ArrayOps {
+    static int[] array1;
+    static int[] array2;
+    static int missingInt;
+    static int isMissingSum;
+    static int isCorrectSum;
+    static int firstMaxValue;
+    static int secondMaxValue;
+    static boolean isEqualsArrays = false;
+    static boolean isSorted = true;
+
     public static void main(String[] args) {
-        
-    }
-    
-    public static int findMissingInt (int [] array) {
-        // Write your code here:
-        return -1;
+        //
     }
 
-    public static int secondMaxValue(int [] array) {
-        // Write your code here:
-        return 0;
+    public static int findMissingInt(int[] array1) {
+        isMissingSum = 0;
+        for (int i = 0; i < array1.length; i++) {
+            isMissingSum += array1[i];
+        }
+        isCorrectSum = 0;
+        for (int i = 0; i <= array1.length; i++) {
+            isCorrectSum += i;
+        }
+        missingInt = isCorrectSum - isMissingSum;
+        return missingInt;
     }
 
-    public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        // Write your code here:
-        return false;
+    public static int secondMaxValue(int[] array1) {
+        firstMaxValue = array1[0];
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] > firstMaxValue) {
+                firstMaxValue = array1[i];
+            }
+        }
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] == firstMaxValue) {
+                array1[i] = 0;
+                i = array1.length;
+            }
+        }
+
+        secondMaxValue = array1[0];
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] > secondMaxValue) {
+                secondMaxValue = array1[i];
+            }
+        }
+        return secondMaxValue;
     }
 
-    public static boolean isSorted(int [] array) {
-        // Write your code here:
-        return false;
+    public static boolean containsTheSameElements(int[] array1, int[] array2) {
+        for (int i = 0; i < array1.length; i++) {
+            isEqualsArrays = false;
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
+                    isEqualsArrays = true;
+                }
+            }
+            if (isEqualsArrays == false) {
+                return isEqualsArrays;
+            }
+        }
+        return isEqualsArrays;
     }
 
+    public static boolean isSorted(int[] array1) {
+        int minNumTest = array1[0];
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] < minNumTest) {
+                isSorted = false;
+            }
+            minNumTest = array1[i];
+        }
+        if (isSorted == false) {
+            isSorted = true;
+            int maxNumTest = array1[0];
+            for (int i = 0; i < array1.length; i++) {
+                if (array1[i] > maxNumTest) {
+                    isSorted = false;
+                }
+                maxNumTest = array1[i];
+            }
+        }
+        return isSorted;
+    }
 }
