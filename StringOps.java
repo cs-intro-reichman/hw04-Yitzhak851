@@ -1,4 +1,9 @@
-
+/**
+ * This class contain a "StringOps" mission.
+ * 
+ * @author (Yitzhak baror)
+ * @version (10.01.2024)
+ */
 public class StringOps {
     static String str1 ;
     static String ans;
