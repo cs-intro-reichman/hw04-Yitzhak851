@@ -3,6 +3,7 @@ public class StringOps {
     static String ans;
     static char chr;
     static int[] arr;
+    static boolean isCowel;
 
     public static void main(String[] args) {
 
@@ -10,20 +11,20 @@ public class StringOps {
 
     public static String capVowelsLowRest(String str) {
         ans = "";
-        boolean bool = true;
+        isCowel = true;
         for (int i = 0; i < str.length(); i++) {
             switch (str.charAt(i)) { // check if char is vowel
-                bool = false;
                 case 97, 101, 105, 111, 117: // a,e,i,o,u
                     ans += (char) (str.charAt(i) - 32);
+                    isCowel = false;
                     break;
                 default:
                     ans += (char) (str.charAt(i));
                     break;
             }
-            if ((str.charAt(i) >= 65 && str.charAt(i) <= 90) && bool ) { // if (isUpper && != vowel) ? converToLower
+            if ((str.charAt(i) >= 65 && str.charAt(i) <= 90) && isCowel ) { // if (isUpper && != vowel) ? converToLower
                 ans += (char) (str.charAt(i) + 32);
-                bool = false;
+                isCowel = false;
             }
         }
         return ans;
