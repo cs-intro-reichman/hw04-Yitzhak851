@@ -3,28 +3,24 @@ public class StringOps {
     static String ans;
     static char chr;
     static int[] arr;
-    static boolean isCowel;
 
     public static void main(String[] args) {
 
     }
 
+    // input - "One two tHRee world"
+    // expected -OnE twO thrEE wOrld
+    // actual - "OonE twO tHREE wOrld
     public static String capVowelsLowRest(String str) {
         ans = "";
-        isCowel = true;
         for (int i = 0; i < str.length(); i++) {
-            switch (str.charAt(i)) { // check if char is vowel
-                case 97, 101, 105, 111, 117: // a,e,i,o,u
-                    ans += (char) (str.charAt(i) - 32);
-                    isCowel = false;
-                    break;
-                default:
-                    ans += (char) (str.charAt(i));
-                    break;
-            }
-            if ((str.charAt(i) >= 65 && str.charAt(i) <= 90) && isCowel ) { // if (isUpper && != vowel) ? converToLower
+            if ((str.charAt(i) >= 65 && str.charAt(i) <= 90)) { // if (isUpper) ? converToLower
                 ans += (char) (str.charAt(i) + 32);
-                isCowel = false;
+            }
+            switch (str.charAt(i)) {         // check if char is vowel
+                case 97, 101, 105, 111, 117: // just at this case: a,e,i,o,u
+                    ans += (char) (str.charAt(i) - 32);
+                    break;
             }
         }
         return ans;
