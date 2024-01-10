@@ -1,3 +1,4 @@
+
 public class StringOps {
     static String str1 ;
     static String ans;
