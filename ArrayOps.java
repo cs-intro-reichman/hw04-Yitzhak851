@@ -1,3 +1,9 @@
+/**
+ * This class contain a "ArrayOps" mission.
+ * 
+ * @author (Yitzhak baror)
+ * @version (10.01.2024)
+ */
 public class ArrayOps {
     static int[] array1;
     static int[] array2;
@@ -84,5 +90,4 @@ public class ArrayOps {
         }
         return isSorted;
     }
-
 }
