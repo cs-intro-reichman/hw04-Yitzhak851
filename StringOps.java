@@ -1,6 +1,6 @@
 public class StringOps {
     static String str1 = "Hello World";
-    static char ans;
+    static String ans;
     static char chr;
     static int[] arr;
 
@@ -12,7 +12,7 @@ public class StringOps {
     // expected -OnE twO thrEE wOrld
     // actual - /nE twO thrEE wOrld
     public static String capVowelsLowRest(String str) {
-        ans = ' ';
+        ans = "";
         for (int i = 0; i < str.length(); i++) {
             char temp = str.charAt(i);
             if (temp >= 65 && temp <= 90) { // if (temp isUpper) ? temp=>Lower
