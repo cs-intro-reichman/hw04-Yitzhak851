@@ -11,6 +11,9 @@ public class StringOps {
     public static String capVowelsLowRest(String str) {
         ans = "";
         for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // isUpper ? converToLower 
+                ans += (char) (str.charAt(i) + 32);
+            }
             switch (str.charAt(i)) {
                 case 97, 101, 105, 111, 117: // a,e,i,o,u
                     ans += (char) (str.charAt(i) - 32);
