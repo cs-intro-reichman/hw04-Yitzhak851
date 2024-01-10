@@ -3,6 +3,7 @@ public class StringOps {
     static String ans;
     static char chr;
     static int[] arr;
+    // Input = String ans: " tWo    wordS"
 
     public static void main(String[] args) {
         printArray(allIndexOf(str1, chr));

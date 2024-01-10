@@ -10,10 +10,7 @@ public class ArrayOps {
     static boolean isSorted = true;
 
     public static void main(String[] args) {
-        // System.out.println(findMissingInt(array1));
-        // System.out.println(secondMaxValue(array1));
-        // containsTheSameElements(array1, array2);
-        // System.out.println(isSorted(array1));
+        //
     }
 
     public static int findMissingInt(int[] array1) {
