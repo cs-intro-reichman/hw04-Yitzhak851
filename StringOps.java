@@ -3,10 +3,8 @@ public class StringOps {
     static String ans;
     static char chr;
     static int[] arr;
-    // Input = String ans: " tWo    wordS"
 
     public static void main(String[] args) {
-        printArray(allIndexOf(str1, chr));
     }
 
     public static String capVowelsLowRest(String str) {
@@ -35,6 +33,9 @@ public class StringOps {
                 if (str.charAt(i) >= 65 && str.charAt(i) <= 90) { // firstChar isUper ? changeToLower
                     ans += (char) (str.charAt(i) + 32);
                 }
+                if (str.charAt(i) >= 97 && str.charAt(i) <= 122) { // firstChar isLower ? Add
+                    ans += str.charAt(i);
+                }                
             } else if (str.charAt(i) == ' ' && i < str.length() - 1) { // if char between words is space
                 while (str.charAt(i) == ' ' && i < str.length()) { // skip all spaces
                     i++;
