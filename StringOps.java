@@ -10,15 +10,23 @@ public class StringOps {
 
     // input - "One two tHRee world"
     // expected -OnE twO thrEE wOrld
-    // actual - oEOhrEEO
+    // actual - /hr
     public static String capVowelsLowRest(String str) {
         ans = "";
         for (int i = 0; i < str.length(); i++) {
+            char temp = str.charAt(i);
             if ((str.charAt(i) >= 65 && str.charAt(i) <= 90)) { // if (isUpper) ? temp = Lower
-                char temp = (char) (str.charAt(i) + 32);
-                switch (temp) { // check if char is vowel
-                    case 97, 101, 105, 111, 117: // just if it is: a,e,i,o,u
-                        temp = (char) (str.charAt(i) - 32); // convert to Upper
+                temp = (char) (str.charAt(i) + 32);        // convert to Lower
+                switch (temp) {                                 // switch temp if char is vowel
+                    case 97, 101, 105, 111, 117:                // just if it is: a,e,i,o,u
+                        temp = (char) (str.charAt(i) - 32);     // convert to Upper
+                        break;
+                }
+                ans += temp;
+            } else {
+                switch (temp) {                                 // switch temp if char is vowel
+                    case 97, 101, 105, 111, 117:                // just if it is: a,e,i,o,u
+                        temp = (char) (str.charAt(i) - 32);     // convert to Upper
                         break;
                 }
                 ans += temp;
