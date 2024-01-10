@@ -1,10 +1,9 @@
 public class StringOps {
-    static String str1 = "hello world";
+    static String str1;
     static String ans;
-    static char chr = 'l';
+    static char chr;
     static int[] arr;
-    // allIndexOf("Hello world",'l'); 
-    // output: {2, 3, 9}
+
     public static void main(String[] args) {
         printArray(allIndexOf(str1, chr));
     }
@@ -66,12 +65,12 @@ public class StringOps {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == chr) {
                 int temp = i;
-                while (temp <= i && index < arr.length) { 
+                while (temp <= i && index < arr.length) {
                     arr[index] = temp;
-                    index++; 
-                    temp++; 
+                    index++;
+                    temp++;
                 }
-                
+
             }
         }
         return arr;
