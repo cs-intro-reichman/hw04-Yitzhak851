@@ -5,6 +5,7 @@ public class StringOps {
     static int[] arr;
 
     public static void main(String[] args) {
+        
     }
 
     public static String capVowelsLowRest(String str) {
@@ -26,7 +27,7 @@ public class StringOps {
         ans = "";
         chr = ' ';
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == chr && i == 0) { // if first char is space
+            if (str.charAt(i) == chr && i == 0) { // isFirstChar isSpace ?
                 while (str.charAt(i) == chr) { // skip all spaces
                     i++;
                 }
@@ -36,7 +37,7 @@ public class StringOps {
                 if (str.charAt(i) >= 97 && str.charAt(i) <= 122) { // firstChar isLower ? Add
                     ans += str.charAt(i);
                 }                
-            } else if (str.charAt(i) == ' ' && i < str.length() - 1) { // if char between words is space
+            } else if (str.charAt(i) == ' ' && i < str.length() - 1) { // isChar between words is space
                 while (str.charAt(i) == ' ' && i < str.length()) { // skip all spaces
                     i++;
                 }
@@ -45,7 +46,7 @@ public class StringOps {
                 } else {
                     ans += (char) (str.charAt(i) - 32);
                 }
-            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90 && i < str.length() - 1) {
+            } else if (str.charAt(i) >= 65 && str.charAt(i) <= 90 ) {
                 // isUpper ? converToLower : add
                 ans += (char) (str.charAt(i) + 32);
             } else {
