@@ -62,11 +62,17 @@ public class StringOps {
             }
         }
         arr = new int[count];
+        int index = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == chr) {
-                for (int j = 0; j < arr.length; j++) {
-                    arr[j] = i;
+                int temp = i;
+                while (temp <= i && index < arr.length) { 
+                    System.out.println(i + " " + index);
+                    arr[index] = temp;
+                    index++; 
+                    temp++; 
                 }
+                
             }
         }
         return arr;
