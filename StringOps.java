@@ -15,18 +15,18 @@ public class StringOps {
         ans = "";
         for (int i = 0; i < str.length(); i++) {
             char temp = str.charAt(i);
-            if (temp >= 65 && temp <= 90) {                     // if (temp isUpper) ? temp=>Lower
-                temp = (char) (str.charAt(i) + 32);             // convert to Lower
-                switch (temp) {                                 // switch temp if char is vowel
-                    case 97, 101, 105, 79, 117:                // just if it is: a,e,i,o,u
-                        temp = (char) (str.charAt(i) - 32);     // convert to Upper
+            if (temp >= 65 && temp <= 90) { // if (temp isUpper) ? temp=>Lower
+                temp = (char)(str.charAt(i) + 32); // convert to Lower
+                switch (temp) { // switch temp if char is vowel
+                    case 97, 101, 105, 79, 117: // just if it is: a,e,i,o,u
+                        temp = (char) (str.charAt(i) - 32); // convert to Upper
                         break;
                 }
                 ans += temp;
             } else {
-                switch (temp) {                                 // switch temp if char is vowel
-                    case 97, 101, 105, 111, 117:                // just if it is: a,e,i,o,u
-                        temp = (char) (str.charAt(i) - 32);     // convert to Upper
+                switch (temp) { // switch temp if char is vowel
+                    case 97, 101, 105, 111, 117: // just if it is: a,e,i,o,u
+                        temp = (char) (str.charAt(i) - 32); // convert to Upper
                         break;
                 }
                 ans += temp;
